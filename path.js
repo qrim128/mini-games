@@ -1,60 +1,66 @@
 let currentTimeLimit = 0; // store only time limit for restart
 
 // Sound effects
-const startAudio = new Audio("https://cdn.discordapp.com/attachments/946377425246355488/1324930314241577003/startgame_ZcF1jnRU.mp3?ex=689d4c82&is=689bfb02&hm=cfd62ffdec322373113bc38dab44df3904a6112dbd7545fb408d7219dfd1d9c2&");
-const successAudio = new Audio("https://cdn.discordapp.com/attachments/946377425246355488/1324932109520867397/complete_Cfdf1yoy.mp3?ex=689d4e2e&is=689bfcae&hm=8c52404349ce313f112093adab9a9ba65cf6318bbba3c131cf649b304e10fb7f&");
-const failAudio = new Audio("https://cdn.discordapp.com/attachments/946377425246355488/1324932109877379102/failed_xU2uSMHP.mp3?ex=689d4e2f&is=689bfcaf&hm=b4a013709676af2db8e617e2bd9671900363ee41d490caabb8fd8117cf0a73ec&");
+const startAudio = new Audio("https://cdn.discordapp.com/attachments/946377425246355488/1324930314241577003/startgame_ZcF1jnRU.mp3?ex=689d4c82&amp;is=689bfb02&amp;hm=cfd62ffdec322373113bc38dab44df3904a6112dbd7545fb408d7219dfd1d9c2&amp;");
+const successAudio = new Audio("https://cdn.discordapp.com/attachments/946377425246355488/1324932109520867397/complete_Cfdf1yoy.mp3?ex=689d4e2e&amp;is=689bfcae&amp;hm=8c52404349ce313f112093adab9a9ba65cf6318bbba3c131cf649b304e10fb7f&amp;");
+const failAudio = new Audio("https://cdn.discordapp.com/attachments/946377425246355488/1324932109877379102/failed_xU2uSMHP.mp3?ex=689d4e2f&amp;is=689bfcaf&amp;hm=b4a013709676af2db8e617e2bd9671900363ee41d490caabb8fd8117cf0a73ec&amp;");
 
 let canMove = false;  // Flag to prevent movement during start screen & memorization phase
 
 const playerPos = {
-  x: 1,
-  y: 1,
-  lastMove: null,
-  up() {
-    this.y++;
-    this.lastMove = "up";
-    return this;
-  },
-  down() {
-    this.y--;
-    this.lastMove = "down";
-    return this;
-  },
-  left() {
-    this.x--;
-    this.lastMove = "left";
-    return this;
-  },
-  right() {
-    this.x++;
-    this.lastMove = "right";
-    return this;
-  },
-  updatePos() {
-    $(".player").removeClass("player");
-    $(".off-path-player").removeClass("off-path-player").html("");
-    const currentSquare = $(`[data-pathx="${this.x}"][data-pathy="${this.y}"]`);
-    if (currentSquare.hasClass("path-square") || currentSquare.hasClass("hidden-path")) {
-      currentSquare.addClass("player");
-      this.onPath = true;
-      if (this.y == currentGridSize) {
-        endPathGame(true);
-      }
-    } else {
-      currentSquare.addClass("off-path-player").html(oppositeArrowIcons[this.lastMove]);
-      this.onPath = false;
-      this.errorsMade++;
-      if (this.errorsMade >= pathLives) {
-        endPathGame(false, "lives");
-      }
-    }
-  },
-  onPath: true,
-  errorsMade: 0,
+    x: 1,
+    y: 1,
+    lastMove: null,
+    up() {
+        this.y++;
+        this.lastMove = "up";
+        return this
+    },
+    down() {
+        this.y--;
+        this.lastMove = "down";
+        return this
+    },
+    left() {
+        this.x--;
+        this.lastMove = "left";
+        return this
+    },
+    right() {
+        this.x++
+        this.lastMove = "right";
+        return this
+    },
+    updatePos() {
+        $(".player").removeClass("player");
+        $(".off-path-player").removeClass("off-path-player").html("");
+
+        const currentSquare = $(`[data-pathx="${this.x}"][data-pathy="${this.y}"]`);
+        if (currentSquare.hasClass("path-square") || currentSquare.hasClass("hidden-path")) {
+            currentSquare.addClass("player");
+            this.onPath = true;
+            if (this.y == currentGridSize) {
+                endPathGame(true);
+            }
+        } else {
+            currentSquare.addClass("off-path-player").html(oppositeArrowIcons[this.lastMove]);
+            this.onPath = false;
+            this.errorsMade++;
+            if (this.errorsMade >= pathLives) {
+                endPathGame(false, "lives");
+            }
+        }
+    },
+    onPath: true,
+    errorsMade: 0,
 };
 
-const oppositeArrowIcons = { up: '', down: '', left: '', right: '' };
+const oppositeArrowIcons = {
+    up: '<i class="fa-solid fa-down-long"></i>',
+    down: '<i class="fa-solid fa-up-long"></i>',
+    left: '<i class="fa-solid fa-right-long"></i>',
+    right: '<i class="fa-solid fa-left-long"></i>',
+}
 
 let currentGridSize, pathLives;
 
@@ -260,4 +266,3 @@ $(document).keydown(function(e) {
     }
   }
 });
-
