@@ -116,9 +116,9 @@ function startSpotGame(settings) {
 function playSound(type) {
     let soundFile = "";
     if (type === "win") {
-        soundFile = "https://cdn.discordapp.com/attachments/946377425246355488/1324932109520867397/complete_Cfdf1yoy.mp3";
+        soundFile = "https://cdn.discordapp.com/attachments/946377425246355488/1324932109520867397/complete_Cfdf1yoy.mp3?ex=689d4e2e&is=689bfcae&hm=8c52404349ce313f112093adab9a9ba65cf6318bbba3c131cf649b304e10fb7f&";
     } else if (type === "lose") {
-        soundFile = "https://cdn.discordapp.com/attachments/946377425246355488/1324932109877379102/failed_xU2uSMHP.mp3";
+        soundFile = "https://cdn.discordapp.com/attachments/946377425246355488/1324932109877379102/failed_xU2uSMHP.mp3?ex=689d4e2f&is=689bfcaf&hm=b4a013709676af2db8e617e2bd9671900363ee41d490caabb8fd8117cf0a73ec&";
     } else if (type === "start") {
         soundFile = "https://cdn.discordapp.com/attachments/946377425246355488/1324930314241577003/startgame_ZcF1jnRU.mp3?ex=689d4c82&is=689bfb02&hm=cfd62ffdec322373113bc38dab44df3904a6112dbd7545fb408d7219dfd1d9c2&";
     } else if (type === "click") {
@@ -214,4 +214,5 @@ $("#spot-grid").on("click", ".spot-grid-square", function() {
         })
 
     }
+
 })
