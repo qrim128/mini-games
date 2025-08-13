@@ -178,9 +178,9 @@ function resetSpot() {
 }
 
 $("#spot-grid").on("click", ".spot-grid-square", function() {
-    playSound("click"); // 🔊 Play click sound
 
     if ($(this).data("spot") == spotSettings.currentSpot && !preventClick) {
+        playSound("click"); // 🔊 Play click sound
         spotSettings.currentScore++;
         if (spotSettings.currentScore >= spotSettings.required) {
             endSpotGame(true)
@@ -216,3 +216,4 @@ $("#spot-grid").on("click", ".spot-grid-square", function() {
     }
 
 })
+
