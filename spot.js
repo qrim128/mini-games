@@ -116,7 +116,7 @@ function startSpotGame(settings) {
 function playSound(type) {
     let soundFile = "";
     if (type === "win") {
-        soundFile = "complete.mp3";
+        soundFile = "complete_Cfdf1yoy.mp3";
     } else if (type === "lose") {
         soundFile = "failed_xU2uSMHP.mp3";
     } else if (type === "start") {
@@ -216,6 +216,7 @@ $("#spot-grid").on("click", ".spot-grid-square", function() {
     }
 
 })
+
 
 
 
