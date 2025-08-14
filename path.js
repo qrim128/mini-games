@@ -3,7 +3,7 @@ let currentTimeLimit = 0; // store only time limit for restart
 // Sound effects
 const startAudio = new Audio("startgame_ZcF1jnRU.mp3");
 const successAudio = new Audio("complete.mp3");
-const failAudio = new Audio("failed.mp3");
+const failAudio = new Audio("failed_xU2uSMHP.mp3");
 
 let canMove = false;  // Flag to prevent movement during start screen & memorization phase
 
@@ -266,5 +266,6 @@ $(document).keydown(function(e) {
     }
   }
 });
+
 
 
