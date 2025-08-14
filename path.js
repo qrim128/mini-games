@@ -1,9 +1,9 @@
 let currentTimeLimit = 0; // store only time limit for restart
 
 // Sound effects
-const startAudio = new Audio("https://cdn.discordapp.com/attachments/946377425246355488/1324930314241577003/startgame_ZcF1jnRU.mp3?ex=689d4c82&is=689bfb02&hm=cfd62ffdec322373113bc38dab44df3904a6112dbd7545fb408d7219dfd1d9c2&");
-const successAudio = new Audio("https://cdn.discordapp.com/attachments/946377425246355488/1324932109520867397/complete_Cfdf1yoy.mp3?ex=689d4e2e&is=689bfcae&hm=8c52404349ce313f112093adab9a9ba65cf6318bbba3c131cf649b304e10fb7f&");
-const failAudio = new Audio("https://cdn.discordapp.com/attachments/946377425246355488/1324932109877379102/failed_xU2uSMHP.mp3?ex=689d4e2f&is=689bfcaf&hm=b4a013709676af2db8e617e2bd9671900363ee41d490caabb8fd8117cf0a73ec&");
+const startAudio = new Audio("startgame_ZcF1jnRU.mp3");
+const successAudio = new Audio("complete.mp3");
+const failAudio = new Audio("failed.mp3");
 
 let canMove = false;  // Flag to prevent movement during start screen & memorization phase
 
@@ -266,4 +266,5 @@ $(document).keydown(function(e) {
     }
   }
 });
+
 
