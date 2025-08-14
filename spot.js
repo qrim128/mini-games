@@ -118,7 +118,7 @@ function playSound(type) {
     if (type === "win") {
         soundFile = "complete.mp3";
     } else if (type === "lose") {
-        soundFile = "failed.mp3";
+        soundFile = "failed_xU2uSMHP.mp3";
     } else if (type === "start") {
         soundFile = "startgame_ZcF1jnRU.mp3";
     } else if (type === "click") {
@@ -216,5 +216,6 @@ $("#spot-grid").on("click", ".spot-grid-square", function() {
     }
 
 })
+
 
 
